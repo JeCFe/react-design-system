@@ -1,4 +1,4 @@
-name: Release npm
+name: Package Deployment
 
 on:
   release:

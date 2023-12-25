@@ -1,4 +1,4 @@
-name: Build and deploy storybook
+name: Storybook Deployment
 
 on:
   release:
