@@ -13,7 +13,7 @@
     "build:esm": "tsc && tailwindcss build src/tailwind.css -o dist/esm/tailwind.css",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs && tailwindcss build src/tailwind.css -o dist/cjs/tailwind.css",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "build-storybook -o docs-build"
   },
   "author": "Jessica Fealy",
   "license": "MIT",
