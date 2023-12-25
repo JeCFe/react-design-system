@@ -3,6 +3,11 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -15,11 +20,7 @@ jobs:
         run: |
           npm install
           npm run build-storybook
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+      - name: build-publish
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_PAGES }}
-          BRANCH: main
-          FOLDER: docs-build
-          CLEAN: true
-          TARGET_FOLDER: docs
+          path: docs-build
