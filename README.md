@@ -1,3 +1,4 @@
+[![Build and deploy storybook](https://github.com/JeCFe/react-design-system/actions/workflows/storybook.yml/badge.svg)](https://github.com/JeCFe/react-design-system/actions/workflows/storybook.yml)
 # Using this package
 
 To install and use this package you will need to set up an npm registry pathway, you can do this by the following:
