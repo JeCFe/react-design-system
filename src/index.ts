@@ -1,3 +1,3 @@
-import "./index.css";
+import "./tailwind.css";
 
-export * from "./button/"
+export { Button } from "./button";
