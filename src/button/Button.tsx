@@ -1,4 +1,3 @@
-import React from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
@@ -21,7 +20,7 @@ const button = cva(
       variant: "primary",
       size: "medium",
     },
-  },
+  }
 );
 
 type Props = {

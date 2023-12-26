@@ -1,4 +1,3 @@
-import React from "react";
 import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
@@ -26,7 +25,7 @@ const checkbox = cva(
     defaultVariants: {
       size: "small",
     },
-  },
+  }
 );
 
 const label = cva(["flex flex-col w-fit"], {
@@ -55,7 +54,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
       </div>
       {hint && <span className="ml-12 text-gray-500">{hint}</span>}
     </label>
-  ),
+  )
 );
 
 Checkbox.defaultProps = {

@@ -1,4 +1,3 @@
-import React from "react";
 import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 
