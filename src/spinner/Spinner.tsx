@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from "react";
 import { VariantProps, cva } from "class-variance-authority";
 import { SpinnerSvg } from "../react-svg";

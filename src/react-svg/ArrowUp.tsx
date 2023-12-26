@@ -1,4 +1,5 @@
-import * as React from "react";
+// @ts-ignore
+
 import type { SVGProps } from "react";
 const SvgArrowUp = (props: SVGProps<SVGSVGElement>) => (
   <svg
