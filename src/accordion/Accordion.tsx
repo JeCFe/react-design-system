@@ -1,13 +1,13 @@
 // @ts-ignore
-import React from "react";
+import React, { HtmlHTMLAttributes } from "react";
 import { useState, ReactNode } from "react";
 
-export type Props = {
+type Props = {
   openTitle: ReactNode | ReactNode[];
   closeTitle: ReactNode | ReactNode[];
   children: ReactNode | ReactNode[];
-};
-export function Accordion({ openTitle, closeTitle, children }: Props) {
+} & HtmlHTMLAttributes<HTMLDivElement>;
+export function Accordion({ openTitle, closeTitle, children, ...rest }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleAccordion = () => {
@@ -15,7 +15,7 @@ export function Accordion({ openTitle, closeTitle, children }: Props) {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full" {...rest}>
       <div
         className="w-fit pb-2 underline underline-offset-4 text-blue-500 hover:text-blue-900 transition duration-200 ease-in-out cursor-pointer"
         onClick={toggleAccordion}

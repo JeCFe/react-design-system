@@ -1,6 +1,6 @@
 {
   "name": "@jecfe/react-design-system",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "React design system",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -54,6 +54,7 @@
     "JeCFe:registry": "https://npm.pkg.github.com"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.5.0",
     "class-variance-authority": "^0.7.0"
   }
 }
