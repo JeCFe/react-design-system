@@ -35,6 +35,7 @@
     "css-loader": "^6.8.1",
     "postcss": "^8.4.32",
     "postcss-loader": "^7.3.3",
+    "prettier": "3.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.6",
@@ -48,5 +49,8 @@
   },
   "publishConfig": {
     "JeCFe:registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.0"
   }
 }
