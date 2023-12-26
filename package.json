@@ -9,11 +9,12 @@
     "src/tailwind.css"
   ],
   "scripts": {
-    "build": "rm -rf /dist && npm run build:esm && npm run build:cjs",
+    "build": "rm -rf /dist && npm run covert-svgs && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc && tailwindcss build src/tailwind.css -o dist/esm/tailwind.css",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs && tailwindcss build src/tailwind.css -o dist/cjs/tailwind.css",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build -o docs-build"
+    "build-storybook": "storybook build -o docs-build",
+    "convert-svgs": "npx @svgr/cli --out-dir src/react-svg --ignore-existing --typescript src/icons"
   },
   "author": "Jessica Fealy",
   "license": "MIT",
@@ -28,6 +29,8 @@
     "@storybook/react-vite": "^7.6.6",
     "@storybook/react-webpack5": "^7.6.6",
     "@storybook/test": "^7.6.6",
+    "@svgr/cli": "^8.1.0",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",

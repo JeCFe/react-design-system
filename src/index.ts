@@ -5,3 +5,5 @@ export { Accordion } from "./accordion";
 export { Checkbox } from "./checkbox";
 export { Footer } from "./footer";
 export { RadioButton } from "./radio-button";
+export { Spinner } from "./spinner";
+export * from "./react-svg";
