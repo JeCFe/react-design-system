@@ -9,7 +9,7 @@
     "src/tailwind.css"
   ],
   "scripts": {
-    "build": "rm -rf /dist && npm run covert-svgs && npm run build:esm && npm run build:cjs",
+    "build": "rm -rf /dist && npm run build:esm && npm run build:cjs",
     "build:esm": "tsc && tailwindcss build src/tailwind.css -o dist/esm/tailwind.css",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs && tailwindcss build src/tailwind.css -o dist/cjs/tailwind.css",
     "storybook": "storybook dev -p 6006",
