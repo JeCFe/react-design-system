@@ -21,7 +21,7 @@ const button = cva(
       variant: "primary",
       size: "medium",
     },
-  }
+  },
 );
 
 type Props = {
