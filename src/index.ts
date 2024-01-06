@@ -8,4 +8,5 @@ export { RadioButton } from "./radio-button";
 export { Spinner } from "./spinner";
 export { Anchor } from "./anchor";
 export { Navbar, Navlink } from "./navbar";
+export { Header, NextUser } from "./header";
 export * from "./react-svg";
