@@ -1,8 +1,10 @@
 name: Storybook Deployment
 
 on:
-  release:
-    types: [created]
+  workflow_run:
+    workflows: ["Update Package Version"]
+    types:
+      - completed
 
 permissions:
   contents: read
