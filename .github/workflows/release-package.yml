@@ -1,10 +1,8 @@
 name: Package Deployment
 
 on:
-  workflow_run:
-    workflows: ["Update Package Version"]
-    types:
-      - completed
+  release:
+    types: [created]
 
 jobs:
   publish-gpr:
