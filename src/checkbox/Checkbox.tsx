@@ -6,7 +6,7 @@ import { cva, VariantProps } from "class-variance-authority";
 const checkbox = cva(
   [
     "appearance-none box-border relative border-2 border-black",
-    "focus:before:absolute focus:before:-left-0.5 focus:before:-top-0.5 focus:before:border-4 focus:before:border-black focus:before:ring focus:before:ring-red-500",
+    "focus:before:absolute focus:before:-left-0.5 focus:before:-top-0.5 focus:before:border-4 focus:before:border-black focus:before:ring focus:before:ring-pink-400",
     "checked:after:absolute checked:after:box-border checked:after:rotate-45 checked:after:border-solid checked:after:border-pink-400",
   ],
   {
