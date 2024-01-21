@@ -5,9 +5,9 @@ import { cva, VariantProps } from "class-variance-authority";
 
 const radio = cva(
   [
-    "appearance-none flex rounded-full border-2 border-black",
+    "appearance-none flex rounded-full border-2 border-black focus:outline-none",
     "after:m-auto after:flex after:content-center after:justify-center after:rounded-full after:checked:bg-pink-400",
-    "@apply focus:border-4 focus:ring focus:ring-red-500",
+    "focus:border-4 focus:ring focus:ring-pink-400",
   ],
   {
     variants: {

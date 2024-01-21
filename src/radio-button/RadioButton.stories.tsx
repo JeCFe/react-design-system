@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { RadioButton } from "./RadioButton";
+import React from "react";
 
 const meta: Meta<typeof RadioButton> = {
   title: "Component/RadioButton",
@@ -53,4 +54,20 @@ export const SmallCheckedWithHint: Story = {
     children: "Small checked with hint",
     hint: "Small checked hint",
   },
+};
+
+export const MultipleRadioButtons: Story = {
+  args: {
+    size: "medium",
+  },
+  render: ({ size }) => (
+    <div className="space-y-4">
+      <RadioButton size={size} name="Example">
+        Radio button A
+      </RadioButton>
+      <RadioButton size={size} name="Example">
+        Radio button B
+      </RadioButton>
+    </div>
+  ),
 };

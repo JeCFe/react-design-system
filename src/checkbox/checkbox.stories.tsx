@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Checkbox } from "./Checkbox";
+import React from "react";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Component/Checkbox",
@@ -53,4 +54,13 @@ export const SmallCheckedWithHint: Story = {
     children: "Small checked with hint",
     hint: "Small checked hint",
   },
+};
+
+export const MultipleCheckboxes: Story = {
+  render: ({ size }) => (
+    <div className="space-x-4">
+      <Checkbox size={size}>Checkbox A</Checkbox>
+      <Checkbox size={size}>Checkbox B</Checkbox>
+    </div>
+  ),
 };
