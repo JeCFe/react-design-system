@@ -4,7 +4,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 const button = cva(
-  "flex border-2 rounded-xl items-center justify-center focus:ring-red-300 focus:ring-2 transition duration-300 ease-in-out",
+  "flex border-2 rounded-xl items-center justify-center focus:ring-pink-400 focus:ring-2 transition duration-300 ease-in-out",
   {
     variants: {
       variant: {
