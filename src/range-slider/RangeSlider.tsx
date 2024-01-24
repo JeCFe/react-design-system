@@ -1,8 +1,7 @@
 // @ts-ignore
-import React, { InputHTMLAttributes, ReactNode, useState } from "react";
-
+import React, { InputHTMLAttributes, ReactNode } from "react";
 import { VariantProps, cva } from "class-variance-authority";
-import { ChangeEvent, forwardRef } from "react";
+import { forwardRef } from "react";
 
 const rangeSlider = cva(
   "appearance-none h-3 rounded-full bg-gray-300 accent-pink-500",
@@ -22,31 +21,12 @@ const rangeSlider = cva(
 );
 
 type Props = {
-  onVolumeChange: (volume: number) => void;
-  min?: number;
-  max?: number;
   label?: ReactNode | ReactNode[];
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> &
   VariantProps<typeof rangeSlider>;
 
 export const RangeSlider = forwardRef<HTMLInputElement, Props>(
-  (
-    {
-      onVolumeChange,
-      className,
-      size,
-      min = 0,
-      max = 100,
-      label = undefined,
-      ...rest
-    },
-    ref
-  ) => {
-    const handleVolumeChange = (event: ChangeEvent<HTMLInputElement>) => {
-      const newRange = Number.parseInt(event.target.value);
-
-      onVolumeChange(newRange);
-    };
+  ({ className, size, label = undefined, ...rest }, ref) => {
     return (
       <div className="flex flex-col">
         {label && (
@@ -54,12 +34,10 @@ export const RangeSlider = forwardRef<HTMLInputElement, Props>(
         )}
         <input
           ref={ref}
-          {...rest}
           type="range"
-          min={min}
-          max={max}
-          onChange={handleVolumeChange}
+          aria-label="Slider"
           className={rangeSlider({ className, size })}
+          {...rest}
         />
       </div>
     );
