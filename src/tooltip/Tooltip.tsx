@@ -45,5 +45,3 @@ export function Tooltip({ children, type, size }: Props) {
     </div>
   );
 }
-
-export default Tooltip;
