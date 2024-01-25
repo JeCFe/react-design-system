@@ -9,4 +9,5 @@ export { Spinner } from "./spinner";
 export { Anchor } from "./anchor";
 export { Navbar, Navlink } from "./navbar";
 export { Header, NextUser } from "./header";
+export { Tooltip } from "./tooltip";
 export * from "./react-svg";
