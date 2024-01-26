@@ -15,12 +15,12 @@ export function Navbar({ children }: Props) {
         closeTitle="Close"
         className="visible md:hidden"
       >
-        <div className="flex w-full flex-col item-center text-black divide-y">
+        <div className="item-center flex w-full flex-col divide-y text-black">
           {children}
         </div>
       </Accordion>
-      <div className="flex-col hidden md:flex md:visible md:flex-row w-full">
-        <div className="flex w-full flex-row justify-end text-black divide-x-2">
+      <div className="hidden w-full flex-col md:visible md:flex md:flex-row">
+        <div className="flex w-full flex-row justify-end divide-x-2 text-black">
           {children}
         </div>
       </div>

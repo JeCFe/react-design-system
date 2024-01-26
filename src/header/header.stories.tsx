@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Header } from "./Header";
 import React from "react";
+import { Header } from "./Header";
 
-import { Navbar } from "../navbar";
-import { Navlink } from "../navbar";
+import { Navbar, Navlink } from "../navbar";
 
 const meta: Meta<typeof Header> = {
   title: "Component/Header",
@@ -25,17 +24,11 @@ export const User: Story = {
   args: {
     title: "Example title",
     user: (
-      <div className="flex flex-col sm:flex-row divide-x">
+      <div className="flex flex-col divide-x sm:flex-row">
         <div className="flex flex-row space-x-4 pr-0 sm:pr-2">
           <p className="flex items-center">Example User</p>
-
-          {/* eslint-disable-next-line @next/next/no-img-element*/}
-          <div className="w-14 h-14 rounded-full items-center hidden sm:flex bg-pink-100" />
+          <div className="hidden h-14 w-14 items-center rounded-full bg-pink-100 sm:flex" />
         </div>
-
-        {/* <Anchor className="pl-0 sm:pl-2 flex items-center" href="#">
-          Logout
-        </Anchor> */}
       </div>
     ),
   },
@@ -45,17 +38,11 @@ export const UserAndNavbar: Story = {
   args: {
     title: "Example title",
     user: (
-      <div className="flex flex-col sm:flex-row divide-x">
+      <div className="flex flex-col divide-x sm:flex-row">
         <div className="flex flex-row space-x-4 pr-0 sm:pr-2">
           <p className="flex items-center">Example User</p>
-
-          {/* eslint-disable-next-line @next/next/no-img-element*/}
-          <div className="w-14 h-14 rounded-full items-center hidden sm:flex bg-pink-100" />
+          <div className="hidden h-14 w-14 items-center rounded-full bg-pink-100 sm:flex" />
         </div>
-
-        {/* <Anchor className="pl-0 sm:pl-2 flex items-center" href="#">
-          Logout
-        </Anchor> */}
       </div>
     ),
     navbar: (

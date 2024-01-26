@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Tooltip } from "./Tooltip";
 import React, { ComponentProps } from "react";
+import { Tooltip } from "./Tooltip";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Component/Tooltip",
@@ -16,7 +16,7 @@ export const Default: Story = {
   args: { children: "I am the default" },
 };
 
-export const SizeAndTypes: Story = {
+export const Variants: Story = {
   render: () => {
     const types: ComponentProps<typeof Tooltip>["type"][] = [
       "info",
@@ -32,7 +32,7 @@ export const SizeAndTypes: Story = {
       <div className="flex flex-row space-x-8">
         {sizes.map((size) => (
           <div className="flex flex-col">
-            <h1 className="text-xl font-bold pb-4">{size}</h1>
+            <h1 className="pb-4 text-xl font-bold">{size}</h1>
             <div className="flex flex-col space-y-4">
               {types.map((type) => (
                 <Tooltip size={size} type={type}>

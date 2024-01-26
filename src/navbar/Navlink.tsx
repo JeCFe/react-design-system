@@ -10,7 +10,7 @@ export function Navlink({ children, ...rest }: Props) {
     <div className="relative inline-block">
       <a
         {...rest}
-        className="flex items-center justify-center w-full p-4 text-black hover:bg-pink-100 active:bg-gray-200"
+        className="flex w-full items-center justify-center p-4 text-black hover:bg-pink-100 active:bg-gray-200"
       >
         {children}
       </a>

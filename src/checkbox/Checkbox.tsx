@@ -1,13 +1,13 @@
+import { VariantProps, cva } from "class-variance-authority";
 // @ts-ignore
-import React from "react";
-import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
-import { cva, VariantProps } from "class-variance-authority";
+import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
 const checkbox = cva(
   [
     "appearance-none box-border relative border-2 border-black",
     "focus:before:absolute focus:before:-left-0.5 focus:before:-top-0.5 focus:before:border-4 focus:before:border-black focus:before:ring focus:before:ring-pink-400",
     "checked:after:absolute checked:after:box-border checked:after:rotate-45 checked:after:border-solid checked:after:border-pink-400",
+    "disabled:bg-gray-300",
   ],
   {
     variants: {
@@ -27,7 +27,7 @@ const checkbox = cva(
     defaultVariants: {
       size: "small",
     },
-  }
+  },
 );
 
 const label = cva(["flex flex-col w-fit"], {
@@ -45,7 +45,7 @@ type Props = {
 export const Checkbox = forwardRef<HTMLInputElement, Props>(
   ({ children, hint, size, className, ...rest }: Props, ref) => (
     <label className={label({ size, className })}>
-      <div className="flex flex-row items-center w-fit">
+      <div className="flex w-fit flex-row items-center">
         <input
           {...rest}
           className={checkbox({ size })}
@@ -56,7 +56,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
       </div>
       {hint && <span className="ml-12 text-gray-500">{hint}</span>}
     </label>
-  )
+  ),
 );
 
 Checkbox.defaultProps = {

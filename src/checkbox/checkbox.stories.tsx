@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import React, { ComponentProps } from "react";
 import { Checkbox } from "./Checkbox";
-import React from "react";
+
+const sizes: ComponentProps<typeof Checkbox>["size"][] = ["small", "medium"];
 
 const meta: Meta<typeof Checkbox> = {
   title: "Component/Checkbox",
@@ -12,55 +14,34 @@ const meta: Meta<typeof Checkbox> = {
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
-export const MediumChecked: Story = {
+export const Default: Story = {
   args: {
-    checked: true,
-    children: "Medium checked",
+    children: "Default checkbox",
   },
 };
 
-export const MediumUnchecked: Story = {
-  args: {
-    children: "Medium unchecked",
+export const Variants: Story = {
+  render: () => {
+    return (
+      <div className="flex flex-row space-x-8">
+        {sizes.map((size) => (
+          <div className="flex flex-col">
+            <h1 className="pb-4 text-xl font-bold">{size}</h1>
+            <div className="flex flex-col space-y-4">
+              {[true, false].map((checked) => {
+                return (
+                  <Checkbox size={size} checked={checked}>
+                    {size} {checked ? "checked" : "unchecked"}
+                  </Checkbox>
+                );
+              })}
+              <Checkbox size={size} disabled>
+                {size} disabled
+              </Checkbox>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   },
-};
-
-export const MediumCheckedWithHint: Story = {
-  args: {
-    checked: true,
-    children: "Medium checked with hint",
-    hint: "Medium checked hint",
-  },
-};
-
-export const SmallChecked: Story = {
-  args: {
-    size: "small",
-    checked: true,
-    children: "Small checked",
-  },
-};
-
-export const SmallUnchecked: Story = {
-  args: {
-    children: "Medium unchecked",
-    size: "small",
-  },
-};
-
-export const SmallCheckedWithHint: Story = {
-  args: {
-    size: "small",
-    children: "Small checked with hint",
-    hint: "Small checked hint",
-  },
-};
-
-export const MultipleCheckboxes: Story = {
-  render: ({ size }) => (
-    <div className="space-x-4">
-      <Checkbox size={size}>Checkbox A</Checkbox>
-      <Checkbox size={size}>Checkbox B</Checkbox>
-    </div>
-  ),
 };

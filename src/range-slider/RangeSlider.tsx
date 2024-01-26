@@ -1,7 +1,6 @@
-// @ts-ignore
-import React, { InputHTMLAttributes, ReactNode } from "react";
 import { VariantProps, cva } from "class-variance-authority";
-import { forwardRef } from "react";
+// @ts-ignore
+import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
 const rangeSlider = cva(
   "appearance-none h-3 rounded-full bg-gray-300 accent-pink-500",
@@ -17,7 +16,7 @@ const rangeSlider = cva(
     defaultVariants: {
       size: "medium",
     },
-  }
+  },
 );
 
 type Props = {
@@ -30,7 +29,7 @@ export const RangeSlider = forwardRef<HTMLInputElement, Props>(
     return (
       <div className="flex flex-col">
         {label && (
-          <label className="flex flex-row font-bold mb-4">{label}</label>
+          <label className="mb-4 flex flex-row font-bold">{label}</label>
         )}
         <input
           ref={ref}
@@ -41,5 +40,5 @@ export const RangeSlider = forwardRef<HTMLInputElement, Props>(
         />
       </div>
     );
-  }
+  },
 );

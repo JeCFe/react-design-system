@@ -1,6 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import React, { ComponentProps } from "react";
 import { Button } from "./Button";
+
+const sizes: ComponentProps<typeof Button>["size"][] = [
+  "small",
+  "medium",
+  "large",
+];
+const variants: ComponentProps<typeof Button>["variant"][] = [
+  "primary",
+  "secondary",
+  "destructive",
+];
 
 const meta: Meta<typeof Button> = {
   title: "Component/Button",
@@ -11,66 +23,39 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const LargePrimary: Story = {
+export const Default: Story = {
   args: {
-    size: "large",
-    variant: "primary",
-    children: "Large Primary",
+    children: "Default",
   },
 };
 
-export const MediumPrimary: Story = {
-  args: {
-    size: "medium",
-    variant: "primary",
-    children: "Medium Primary",
-  },
-};
-
-export const SmallPrimary: Story = {
-  args: {
-    size: "small",
-    variant: "primary",
-    children: "Small Primary",
-  },
-};
-
-export const LargeSecondary: Story = {
-  args: {
-    size: "large",
-    variant: "secondary",
-    children: "Large Primary",
-  },
-};
-
-export const MediumSecondary: Story = {
-  args: {
-    size: "medium",
-    variant: "secondary",
-    children: "Medium Secondary",
-  },
-};
-
-export const SmallSecondary: Story = {
-  args: {
-    size: "small",
-    variant: "secondary",
-    children: "Small Secondary",
-  },
-};
-
-export const UnboundPrimary: Story = {
-  args: {
-    size: "unbound",
-    variant: "primary",
-    children: "Unbound Primary",
-  },
-};
-
-export const UnboundSecondary: Story = {
-  args: {
-    size: "unbound",
-    variant: "secondary",
-    children: "Unbound Secondary",
+export const Variants: Story = {
+  render: () => {
+    return (
+      <div className="flex flex-row space-x-8">
+        {sizes.map((size) => (
+          <div className="flex flex-col">
+            <h1 className="pb-4 text-xl font-bold">{size}</h1>
+            <div className="flex flex-col space-y-4">
+              {variants.map((variant) => (
+                <Button size={size} variant={variant}>
+                  {size} {variant}
+                </Button>
+              ))}
+              {variants.map((variant) => (
+                <Button size={size} variant={variant} isLoading={true}>
+                  {size} {variant}
+                </Button>
+              ))}
+              {variants.map((variant) => (
+                <Button size={size} variant={variant} disabled>
+                  {size} {variant} disabled
+                </Button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   },
 };
