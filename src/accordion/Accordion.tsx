@@ -1,5 +1,21 @@
+import { cva } from "class-variance-authority";
 // @ts-ignore
 import React, { HtmlHTMLAttributes, ReactNode, useState } from "react";
+
+const accordion = cva(
+  "transition-max-height overflow-hidden duration-300 ease-in-out",
+  {
+    variants: {
+      open: {
+        true: "max-h-96 opacity-100",
+        false: "max-h-0 opacity-0",
+      },
+    },
+    defaultVariants: {
+      open: true,
+    },
+  },
+);
 
 type Props = {
   openTitle: ReactNode | ReactNode[];
@@ -21,11 +37,7 @@ export function Accordion({ openTitle, closeTitle, children, ...rest }: Props) {
       >
         {!isOpen ? openTitle : closeTitle}
       </div>
-      <div
-        className={`transition-max-height overflow-hidden duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
+      <div className={accordion({ open: isOpen })}>
         <div>{children}</div>
       </div>
     </div>
