@@ -9,6 +9,7 @@ const spinner = cva("", {
       large: "w-40 h-40",
       medium: "w-20 h-20",
       small: "w-10 h-10",
+      xsmall: "w-8 h-8",
     },
     fast: {
       true: "animate-spin",
