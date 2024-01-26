@@ -23,23 +23,6 @@ export const Default: Story = {
   args: {},
 };
 
-export const Small: Story = {
-  args: { size: "small" },
-};
-export const Medium: Story = {
-  args: { size: "medium" },
-};
-export const Large: Story = {
-  args: { size: "large" },
-};
-export const Unbound: Story = {
-  args: { size: "unbound" },
-};
-
-export const Steps: Story = {
-  args: { step: 10 },
-};
-
 export const DefaultWithLabel: Story = {
   args: {
     label: "Label",
