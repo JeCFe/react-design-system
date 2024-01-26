@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { RadioButton } from "./RadioButton";
-import React from "react";
+import React, { ComponentProps } from "react";
+
+const sizes: ComponentProps<typeof RadioButton>["size"][] = ["small", "medium"];
 
 const meta: Meta<typeof RadioButton> = {
   title: "Component/RadioButton",
@@ -12,62 +14,51 @@ const meta: Meta<typeof RadioButton> = {
 export default meta;
 type Story = StoryObj<typeof RadioButton>;
 
-export const MediumChecked: Story = {
-  args: {
-    checked: true,
-    children: "Medium checked",
+export const Default: Story = {
+  args: { children: "Radio Button" },
+};
+
+export const Hint: Story = {
+  render: () => {
+    return (
+      <div className="flex flex-row space-x-8">
+        {sizes.map((size) => (
+          <div className="flex flex-col">
+            <h1 className="text-xl font-bold pb-4">{size}</h1>
+            <div className="flex flex-col space-y-4">
+              <RadioButton size={size} hint={`${size} with a hint`}>
+                {size} radio button
+              </RadioButton>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   },
 };
 
-export const MediumUnchecked: Story = {
-  args: {
-    children: "Medium unchecked",
+export const Variants: Story = {
+  render: () => {
+    return (
+      <div className="flex flex-row space-x-8">
+        {sizes.map((size) => (
+          <div className="flex flex-col">
+            <h1 className="text-xl font-bold pb-4">{size}</h1>
+            <div className="flex flex-col space-y-4">
+              {[true, false].map((checked) => {
+                return (
+                  <RadioButton size={size} checked={checked}>
+                    {size} {checked ? "checked" : "unchecked"}
+                  </RadioButton>
+                );
+              })}
+              <RadioButton size={size} disabled>
+                {size} disabled
+              </RadioButton>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   },
-};
-
-export const MediumCheckedWithHint: Story = {
-  args: {
-    checked: true,
-    children: "Medium checked with hint",
-    hint: "Medium checked hint",
-  },
-};
-
-export const SmallChecked: Story = {
-  args: {
-    size: "small",
-    checked: true,
-    children: "Small checked",
-  },
-};
-
-export const SmallUnchecked: Story = {
-  args: {
-    children: "Medium unchecked",
-    size: "small",
-  },
-};
-
-export const SmallCheckedWithHint: Story = {
-  args: {
-    size: "small",
-    children: "Small checked with hint",
-    hint: "Small checked hint",
-  },
-};
-
-export const MultipleRadioButtons: Story = {
-  args: {
-    size: "medium",
-  },
-  render: ({ size }) => (
-    <div className="space-y-4">
-      <RadioButton size={size} name="Example">
-        Radio button A
-      </RadioButton>
-      <RadioButton size={size} name="Example">
-        Radio button B
-      </RadioButton>
-    </div>
-  ),
 };

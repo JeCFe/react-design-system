@@ -16,7 +16,7 @@ export const Default: Story = {
   args: { children: "I am the default" },
 };
 
-export const SizeAndTypes: Story = {
+export const Variants: Story = {
   render: () => {
     const types: ComponentProps<typeof Tooltip>["type"][] = [
       "info",
