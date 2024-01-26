@@ -15,6 +15,7 @@ const button = cva(
       variant: {
         primary: "bg-pink-100 hover:bg-pink-200 border-black",
         secondary: "bg-white hover:bg-gray-100 border-pink-200",
+        destructive: "bg-red-300 hover:bg-red-500 border-black",
       },
       size: {
         large: "min-h-12 px-4 py-2 text-lg",

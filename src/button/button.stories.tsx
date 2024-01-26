@@ -11,6 +11,7 @@ const sizes: ComponentProps<typeof Button>["size"][] = [
 const variants: ComponentProps<typeof Button>["variant"][] = [
   "primary",
   "secondary",
+  "destructive",
 ];
 
 const meta: Meta<typeof Button> = {
