@@ -1,6 +1,6 @@
+import { cva } from "class-variance-authority";
 // @ts-ignore
 import React, { AnchorHTMLAttributes, ReactNode } from "react";
-import { cva } from "class-variance-authority";
 
 const anchor = cva([
   "inline-block underline underline-offset-4",

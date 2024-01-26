@@ -1,7 +1,6 @@
-// @ts-ignore
-import React from "react";
 import { VariantProps, cva } from "class-variance-authority";
-import { ButtonHTMLAttributes, ReactNode } from "react";
+// @ts-ignore
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import { Spinner } from "../spinner";
 
 const button = cva(
@@ -27,7 +26,7 @@ const button = cva(
       variant: "primary",
       size: "medium",
     },
-  }
+  },
 );
 
 type Props = {
@@ -46,9 +45,9 @@ export function Button({
   ...rest
 }: Props) {
   return (
-    <div className="relative w-fit h-min">
+    <div className="relative h-min w-fit">
       {isLoading && (
-        <div className="absolute z-10 w-full h-full rounded-xl bg-gray-600 bg-opacity-75 flex items-center justify-center">
+        <div className="absolute z-10 flex h-full w-full items-center justify-center rounded-xl bg-gray-600 bg-opacity-75">
           <Spinner fast={isLoading} size="xsmall" />
         </div>
       )}

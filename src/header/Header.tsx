@@ -9,14 +9,14 @@ type Props = {
 
 export const Header = ({ title, user, navbar }: Props) => {
   return (
-    <div className="flex items-center w-screen h-auto bg-white shadow-2xl shadow-pink-200 mb-20 ">
-      <div className="container mx-auto py-2 divide-y">
-        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0">
-          <div className="flex flex-row md:flex-col md:grow md:justify-center text-2xl md:text-3xl font-bold">
+    <div className="mb-20 flex h-auto w-screen items-center bg-white shadow-2xl shadow-pink-200 ">
+      <div className="container mx-auto divide-y py-2">
+        <div className="flex flex-col space-y-2 md:flex-row md:space-y-0">
+          <div className="flex flex-row text-2xl font-bold md:grow md:flex-col md:justify-center md:text-3xl">
             {title}
           </div>
           {user && (
-            <div className="flex flex-row md:flex-col justify-start md:justify-end text-lg md:text-xl">
+            <div className="flex flex-row justify-start text-lg md:flex-col md:justify-end md:text-xl">
               {user}
             </div>
           )}

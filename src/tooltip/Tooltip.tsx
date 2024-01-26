@@ -1,7 +1,7 @@
+import { VariantProps, cva } from "class-variance-authority";
 //@ts-ignore
 import React, { ReactNode, useState } from "react";
 import { Info } from "../react-svg";
-import { VariantProps, cva } from "class-variance-authority";
 
 const tooltip = cva("", {
   variants: {
@@ -38,7 +38,7 @@ export function Tooltip({ children, type, size }: Props) {
         <Info className={tooltip({ type, size })} />
       </span>
       {isVisible && (
-        <div className="absolute z-10 bg-white p-2 w-max max-w-48 h-min rounded-md shadow-lg text-base">
+        <div className="absolute z-10 h-min w-max max-w-48 rounded-md bg-white p-2 text-base shadow-lg">
           {children}
         </div>
       )}

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React, { ComponentProps } from "react";
 
 import { RadioButton } from "./RadioButton";
-import React, { ComponentProps } from "react";
 
 const sizes: ComponentProps<typeof RadioButton>["size"][] = ["small", "medium"];
 
@@ -24,7 +24,7 @@ export const Hint: Story = {
       <div className="flex flex-row space-x-8">
         {sizes.map((size) => (
           <div className="flex flex-col">
-            <h1 className="text-xl font-bold pb-4">{size}</h1>
+            <h1 className="pb-4 text-xl font-bold">{size}</h1>
             <div className="flex flex-col space-y-4">
               <RadioButton size={size} hint={`${size} with a hint`}>
                 {size} radio button
@@ -43,7 +43,7 @@ export const Variants: Story = {
       <div className="flex flex-row space-x-8">
         {sizes.map((size) => (
           <div className="flex flex-col">
-            <h1 className="text-xl font-bold pb-4">{size}</h1>
+            <h1 className="pb-4 text-xl font-bold">{size}</h1>
             <div className="flex flex-col space-y-4">
               {[true, false].map((checked) => {
                 return (

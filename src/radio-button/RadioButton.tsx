@@ -1,7 +1,6 @@
+import { VariantProps, cva } from "class-variance-authority";
 // @ts-ignore
-import React from "react";
-import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
-import { cva, VariantProps } from "class-variance-authority";
+import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
 const radio = cva(
   [
@@ -20,7 +19,7 @@ const radio = cva(
     defaultVariants: {
       size: "small",
     },
-  }
+  },
 );
 
 const label = cva(["flex flex-col"], {
@@ -48,7 +47,7 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
         <span className="ml-2">{children}</span>
       </div>
     </label>
-  )
+  ),
 );
 
 RadioButton.defaultProps = {
