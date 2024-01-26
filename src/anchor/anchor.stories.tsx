@@ -11,7 +11,7 @@ const meta: Meta<typeof Anchor> = {
 export default meta;
 type Story = StoryObj<typeof Anchor>;
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {
     children: "I am a styled a tag",
   },
