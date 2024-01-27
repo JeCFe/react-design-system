@@ -4,7 +4,7 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { ToggleItem } from "../toggle-item/ToggleItem";
+import { ToggleItem } from "../toggle-item";
 
 type Props = {
   children: ReactElement<typeof ToggleItem> | ReactElement<typeof ToggleItem>[];
@@ -45,7 +45,7 @@ export function ToggleGroup({
     <div className="flex space-x-2">
       {React.Children.map(children, (child, index) =>
         React.cloneElement(child as React.ReactElement, {
-          size: size,
+          size,
           active: activeIndexes.includes(index),
           onClick: () => {
             handleToggle(index);

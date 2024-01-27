@@ -20,7 +20,7 @@ export const Default: Story = {
   args: { children: "I am the default" },
 };
 
-export const MultiSelect: Story = {
+export const Variants: Story = {
   render: () => {
     return (
       <div className="flex flex-row space-x-8">

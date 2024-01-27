@@ -5,19 +5,17 @@ import React, { ReactNode } from "react";
 const toggleVariants = cva(
   [
     "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-transparent",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2",
-    "disabled:pointer-events-none disabled:opacity-50",
-    "hover:bg-pink-300 hover:text-muted-foreground",
+    "hover:bg-pink-400 hover:text-muted-foreground",
   ],
   {
     variants: {
       active: {
-        true: "bg-pink-200",
+        true: "bg-pink-300",
       },
       size: {
-        small: "h-9 px-2 text-base",
-        medium: "h-10 px-3 text-lg",
-        large: "h-11 px-4 text-xl",
+        small: "h-8 px-2.5 text-xs",
+        medium: "h-9 px-3 text-lg",
+        large: "h-10 px-3.5 text-xl",
       },
     },
     defaultVariants: {

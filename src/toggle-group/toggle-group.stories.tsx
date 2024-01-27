@@ -18,7 +18,7 @@ const meta: Meta<typeof ToggleGroup> = {
 export default meta;
 type Story = StoryObj<typeof ToggleGroup>;
 
-export const MultiSelect: Story = {
+export const Variants: Story = {
   render: () => {
     return (
       <div className="flex flex-row space-x-8 ">
