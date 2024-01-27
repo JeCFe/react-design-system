@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 
 const toggleVariants = cva(
   [
-    "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors bg-transparent",
+    "inline-flex items-center justify-center rounded-md transition-colors",
     "hover:bg-pink-400 hover:text-muted-foreground",
   ],
   {
@@ -13,7 +13,7 @@ const toggleVariants = cva(
         true: "bg-pink-300",
       },
       size: {
-        small: "h-8 px-2.5 text-xs",
+        small: "h-8 px-2.5 text-small",
         medium: "h-9 px-3 text-lg",
         large: "h-10 px-3.5 text-xl",
       },
