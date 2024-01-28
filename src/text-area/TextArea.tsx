@@ -11,8 +11,7 @@ import React, {
 
 const textArea = cva(
   [
-    "appearance-none border-2 p-3 pb-4 border-black rounded-md resize-none min-w-40",
-    "focus:outline-none focus:ring-2 focus:ring-pink-400",
+    "appearance-none focus:outline-none resize-none min-w-40",
     "disabled:bg-gray-300",
   ],
   {
@@ -28,10 +27,15 @@ const textArea = cva(
         large: "h-[500px]",
         full: "h-full",
       },
+      border: {
+        bottom: "px-2 pb-1 border-b border-black",
+        full: "rounded-md p-3 pb-4 border-2 border-black focus:outline-none focus:ring-2 focus:ring-pink-400",
+      },
     },
     defaultVariants: {
       width: "full",
       height: "medium",
+      border: "full",
     },
   },
 );
@@ -53,6 +57,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
       className,
       width,
       height,
+      border,
       ...rest
     }: Props,
     forwardedRef,
@@ -60,7 +65,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
     const setAutoHeight = () => {
-      if (autoGrow && textAreaRef.current) {
+      if ((autoGrow || border === "bottom") && textAreaRef.current) {
         textAreaRef.current.style.height = "0px";
         const scrollHeight = textAreaRef.current!.scrollHeight;
         textAreaRef.current.style.height = scrollHeight + "px";
@@ -69,7 +74,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
 
     useEffect(() => {
       setAutoHeight();
-    }, [autoGrow]);
+    }, [autoGrow, border]);
 
     const handleChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
       setAutoHeight();
@@ -86,7 +91,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         <textarea
           ref={textAreaRef}
           onChange={handleChange}
-          className={textArea({ width, height, className })}
+          className={textArea({ border, width, height, className })}
           {...rest}
         />
       </div>

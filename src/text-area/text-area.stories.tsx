@@ -15,6 +15,8 @@ const heights: ComponentProps<typeof TextArea>["height"][] = [
   "full",
 ];
 
+const borders: ComponentProps<typeof TextArea>["border"][] = ["bottom", "full"];
+
 const meta: Meta<typeof TextArea> = {
   title: "Component/TextArea",
   component: TextArea,
@@ -36,6 +38,11 @@ export const Variants: Story = {
           <div className="flex w-full flex-col">
             <h1 className="pb-4 text-xl font-bold">{width}</h1>
             <div className="flex w-full flex-col space-y-4">
+              <TextArea
+                border="bottom"
+                width={width}
+                placeholder="Underline border"
+              />
               <TextArea autoGrow width={width} placeholder={`${width} grow`} />
               <TextArea
                 width={width}
