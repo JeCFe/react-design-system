@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React, { ComponentProps } from "react";
 import { Button } from "../button/Button";
 import { Pill } from "../pill/Pill";
-import { Timeline } from "./VerticalTimeline";
+import { Timeline } from "./Timeline";
 
 const meta: Meta<typeof Timeline> = {
   title: "Component/Timeline",

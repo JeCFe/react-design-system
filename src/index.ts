@@ -13,3 +13,6 @@ export { Spinner } from "./spinner";
 export { ToggleGroup } from "./toggle-group";
 export { ToggleItem } from "./toggle-item";
 export { Tooltip } from "./tooltip";
+
+export { Pill } from "./pill";
+export { Timeline } from "./timeline";
