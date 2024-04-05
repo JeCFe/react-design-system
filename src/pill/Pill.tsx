@@ -1,17 +1,18 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { ReactNode } from "react";
+//@ts-ignore
+import React, { ReactNode } from "react";
 
-const pill = cva("", {
+const pill = cva("rounded-full text-center", {
   variants: {
     type: {
       info: "bg-blue-200",
       warning: "bg-yellow-200",
       alert: "bg-red-200",
+      success: "bg-green-200",
     },
     size: {
-      small: "px-2 py-1",
-      medium: "px-3 py-2",
-      large: "px-4 py-3",
+      medium: "px-2 py-1",
+      large: "px-4 py-2",
     },
   },
   defaultVariants: {
@@ -26,5 +27,5 @@ type Props = {
 } & VariantProps<typeof pill>;
 
 export function Pill({ children, className, type, size }: Props) {
-  return <div className={pill({ type, size, className })}>{children}</div>;
+  return <span className={pill({ type, size, className })}>{children}</span>;
 }

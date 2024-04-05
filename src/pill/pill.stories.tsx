@@ -22,12 +22,9 @@ export const Variants: Story = {
       "info",
       "warning",
       "alert",
+      "success",
     ];
-    const sizes: ComponentProps<typeof Pill>["size"][] = [
-      "small",
-      "medium",
-      "large",
-    ];
+    const sizes: ComponentProps<typeof Pill>["size"][] = ["medium", "large"];
     return (
       <div className="flex flex-row space-x-8">
         {sizes.map((size) => (
@@ -36,7 +33,7 @@ export const Variants: Story = {
             <div className="flex flex-col space-y-4">
               {types.map((type) => (
                 <Pill size={size} type={type}>
-                  I am pill {type} and size {size}
+                  {type}
                 </Pill>
               ))}
             </div>

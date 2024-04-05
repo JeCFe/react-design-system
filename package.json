@@ -35,6 +35,7 @@
     "@types/node": "20.10.5",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "autoprefixer": "10.4.16",
     "css-loader": "6.8.1",
     "postcss": "8.4.32",
@@ -59,6 +60,6 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "3.5.0",
     "class-variance-authority": "0.7.0",
-    "react-vertical-timeline-component": "^3.6.0"
+    "react-vertical-timeline-component": "3.6.0"
   }
 }
