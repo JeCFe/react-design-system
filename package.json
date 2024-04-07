@@ -1,6 +1,6 @@
 {
   "name": "@jecfe/react-design-system",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "React design system",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -51,8 +51,8 @@
     "typescript": "5.3.3"
   },
   "peerDependencies": {
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "publishConfig": {
     "JeCFe:registry": "https://npm.pkg.github.com"
