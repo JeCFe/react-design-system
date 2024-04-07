@@ -10,8 +10,8 @@
   ],
   "scripts": {
     "build": "rm -rf /dist && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc && tailwindcss build src/tailwind.css -o dist/esm/tailwind.css",
-    "build:cjs": "tsc --module CommonJS --outDir dist/cjs && tailwindcss build src/tailwind.css -o dist/cjs/tailwind.css",
+    "build:esm": "tsc && npx -y copyFiles ./css/**/*.css ./dist/esm/css && tailwindcss build -i src/tailwind.css -o dist/esm/tailwind.css",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs && npx -y copyFiles ./css/**/*.css ./dist/cjs/css && tailwindcss build -i src/tailwind.css -o dist/cjs/tailwind.css",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o docs-build",
     "convert-svgs": "npx @svgr/cli --out-dir src/react-svg --ignore-existing --typescript src/icons"
@@ -37,6 +37,7 @@
     "@types/react-dom": "18.2.18",
     "@types/react-vertical-timeline-component": "^3.3.6",
     "autoprefixer": "10.4.16",
+    "copyfiles": "^2.4.1",
     "css-loader": "6.8.1",
     "postcss": "8.4.32",
     "postcss-loader": "7.3.3",
@@ -45,6 +46,7 @@
     "prettier-plugin-tailwindcss": "0.5.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "rimraf": "^5.0.5",
     "storybook": "7.6.6",
     "style-loader": "3.3.3",
     "tailwindcss": "3.4.0",
