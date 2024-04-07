@@ -1,11 +1,6 @@
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-  VerticalTimelineProps,
-} from "react-vertical-timeline-component";
 //@ts-ignore
 import React, { ReactNode } from "react";
-import "react-vertical-timeline-component/style.min.css";
+import { VerticalTimeline, VerticalTimelineElement } from "../../lib";
 
 type AcceptedColours = "blue" | "yellow" | "red" | "green" | "pink";
 
@@ -27,16 +22,11 @@ export type Props = {
   lineColour: "black" | "white";
   items: TimelineItems[];
   iconStyle?: AcceptedColours;
-} & Pick<VerticalTimelineProps, "layout">;
+};
 
-export function Timeline({
-  lineColour,
-  layout,
-  items,
-  iconStyle = "pink",
-}: Props) {
+export function Timeline({ lineColour, items, iconStyle = "pink" }: Props) {
   return (
-    <VerticalTimeline lineColor={lineColour} layout={layout}>
+    <VerticalTimeline lineColor={lineColour}>
       {items.map((x, index) => {
         return (
           <VerticalTimelineElement

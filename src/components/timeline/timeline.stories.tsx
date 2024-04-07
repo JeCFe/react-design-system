@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import React, { ComponentProps } from "react";
+import React from "react";
 import { Button } from "../button/Button";
 import { Pill } from "../pill/Pill";
 import { Timeline } from "./Timeline";

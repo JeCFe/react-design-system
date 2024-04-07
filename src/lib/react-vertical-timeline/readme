@@ -1,0 +1,1 @@
+This code was taken from (React Vertical Timeline)[https://github.com/stephane-monnot/react-vertical-timeline] created by Stephane Monnot. This package has out of date dependancies being React and Node, I have pulled this code into my repo rewritten to be TS and made some changes to get the code working.
