@@ -1,6 +1,9 @@
 name: Package Deployment
 
 on:
+  push:
+    branches:
+      - main
   release:
     types: [created]
 
