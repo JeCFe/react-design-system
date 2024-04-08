@@ -6,7 +6,8 @@
   "module": "dist/esm/index.js",
   "files": [
     "dist",
-    "src/tailwind.css"
+    "src/tailwind.css",
+    "css"
   ],
   "scripts": {
     "build": "rm -rf /dist && npm run build:esm && npm run build:cjs",
