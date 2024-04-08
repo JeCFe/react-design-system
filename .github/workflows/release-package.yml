@@ -22,7 +22,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: npm run build
-      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.TOKEN}}
       - uses: MadaraUchiha/copy-action@0.0.1
@@ -37,9 +36,8 @@ jobs:
           source: ./css
           # Target file
           target: ./dist/cjs/css
-      - uses: MadaraUchiha/copy-action@0.0.1
+      - uses: actions/setup-node@v3
         with:
-          # Source file
-          source:
-          # Target file
-          target:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com/
+      - run: npm publish
