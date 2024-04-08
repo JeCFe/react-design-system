@@ -25,7 +25,6 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.TOKEN}}
-                  - name: Copy Directory
       - uses: MadaraUchiha/copy-action@0.0.1
         with:
           # Source file
@@ -38,12 +37,9 @@ jobs:
           source: ./css
           # Target file
           target: ./dist/cjs/css
-      
-     
-       - uses: MadaraUchiha/copy-action@0.0.1
+      - uses: MadaraUchiha/copy-action@0.0.1
         with:
           # Source file
-          source: 
+          source:
           # Target file
-          target: 
-          
+          target:
