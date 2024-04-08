@@ -2,7 +2,7 @@ import classNames from "classnames";
 
 import React from "react";
 
-import "../../../css/VerticalTimeline.css";
+import "../../css/VerticalTimeline.css";
 
 export type VerticalTimelineProps = {
   children: React.ReactNode | React.ReactNode[];

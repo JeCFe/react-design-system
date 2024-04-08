@@ -3,7 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import { InView } from "react-intersection-observer";
-import "../../../css/VerticalTimelineElement.css";
+import "../../css/VerticalTimelineElement.css";
 
 const elementPosition = cva("vertical-timeline-element", {
   variants: {

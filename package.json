@@ -6,13 +6,12 @@
   "module": "dist/esm/index.js",
   "files": [
     "dist",
-    "src/tailwind.css",
-    "css"
+    "src/tailwind.css"
   ],
   "scripts": {
     "build": "rm -rf /dist && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc && tailwindcss build -i src/tailwind.css -o dist/esm/tailwind.css",
-    "build:cjs": "tsc --module CommonJS --outDir dist/cjs && tailwindcss build -i src/tailwind.css -o dist/cjs/tailwind.css",
+    "build:esm": "tsc && cp -r ./src/css ./dist/esm/css &&tailwindcss build -i src/tailwind.css -o dist/esm/tailwind.css",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs && cp -r ./src/css ./dist/cjs/css && tailwindcss build -i src/tailwind.css -o dist/cjs/tailwind.css",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o docs-build",
     "convert-svgs": "npx @svgr/cli --out-dir src/react-svg --ignore-existing --typescript src/icons"
