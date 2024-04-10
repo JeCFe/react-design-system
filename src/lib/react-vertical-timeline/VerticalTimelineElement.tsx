@@ -13,7 +13,7 @@ const elementPosition = cva("vertical-timeline-element", {
   },
 });
 
-interface VerticalTimelineElementProps {
+export interface VerticalTimelineElementProps {
   children?: React.ReactNode | React.ReactNode[];
   className?: string;
   contentArrowStyle?: React.CSSProperties;
@@ -51,9 +51,11 @@ export function VerticalTimelineElement({
   textClassName = "",
   visible = false,
   shadowSize = "small", // small | medium | large
+  
+  
 }: VerticalTimelineElementProps) {
   return (
-    <InView triggerOnce rootMargin="0px 0px -40px 0px">
+    <InView triggerOnce rootMargin="0px 0px -40px 0px" >
       {({ inView, ref }) => (
         <div
           ref={ref}
