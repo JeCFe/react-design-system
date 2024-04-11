@@ -12,20 +12,19 @@ var colours: { [key in AcceptedColours]: string } = {
   green: "rgb(187 247 208)",
 };
 
-export type TimelineItems = {
+export type TimelineItem = {
   children: ReactNode;
   date?: string;
   icon?: ReactNode;
-  textClassName?:string;
-  className?:string;
+  textClassName?: string;
+  className?: string;
   iconClassName?: string;
 };
 
 export type Props = {
   lineColour: "black" | "white";
-  items: TimelineItems[];
+  items: TimelineItem[];
   iconStyle?: AcceptedColours;
-  
 };
 
 export function Timeline({ lineColour, items, iconStyle = "pink" }: Props) {

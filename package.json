@@ -1,6 +1,6 @@
 {
   "name": "@jecfe/react-design-system",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "React design system",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "3.5.0",
+    "@codaworks/react-glow": "^1.0.6",
     "class-variance-authority": "0.7.0",
     "classnames": "^2.5.1",
     "react-intersection-observer": "^9.8.1"
