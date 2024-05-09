@@ -4,6 +4,7 @@ import React from "react";
 import { Header } from "./Header";
 
 import { Navbar, Navlink } from "../navbar";
+import { JecfeLogo } from "../react-svg";
 
 const meta: Meta<typeof Header> = {
   title: "Component/Header",
@@ -14,9 +15,16 @@ const meta: Meta<typeof Header> = {
 export default meta;
 type Story = StoryObj<typeof Header>;
 
-export const Title: Story = {
+export const Default: Story = {
   args: {
     title: "Example title",
+  },
+};
+
+export const WithLogo: Story = {
+  args: {
+    title: "Example title",
+    logo: <JecfeLogo height="48" />,
   },
 };
 

@@ -16,6 +16,12 @@ type Story = StoryObj<typeof Footer>;
 export const Default: Story = {
   args: {
     children: "Hello there :O",
-    logo: <JecfeLogoBlack height="32" />,
+  },
+};
+
+export const WithLogo: Story = {
+  args: {
+    children: "Hello there :O",
+    logo: <JecfeLogoBlack height="48" />,
   },
 };
