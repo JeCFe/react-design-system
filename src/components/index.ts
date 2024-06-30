@@ -12,5 +12,6 @@ export { Spinner } from "./spinner";
 export { Timeline } from "./timeline";
 export { ToggleGroup } from "./toggle-group";
 export { ToggleItem } from "./toggle-item";
+export { TextArea } from "./text-area";
 export { Tooltip } from "./tooltip";
 import "../tailwind.css";
