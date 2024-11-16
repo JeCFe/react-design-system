@@ -1,5 +1,5 @@
 //@ts-ignore
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "../../lib";
 
 type AcceptedColours = "blue" | "yellow" | "red" | "green" | "pink";

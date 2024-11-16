@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
-// @ts-ignore
-import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
+
+import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
 const radio = cva(
   [

@@ -1,6 +1,5 @@
 import { cva } from "class-variance-authority";
-// @ts-ignore
-import React, { HtmlHTMLAttributes, ReactNode, useState } from "react";
+import { HtmlHTMLAttributes, ReactNode, useState } from "react";
 
 const accordion = cva(
   "transition-max-height overflow-hidden duration-300 ease-in-out",

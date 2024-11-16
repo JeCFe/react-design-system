@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 //@ts-ignore
-import React, { ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 import { Info } from "../react-svg";
 
 const tooltip = cva("", {

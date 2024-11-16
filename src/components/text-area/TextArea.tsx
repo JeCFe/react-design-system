@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
-// @ts-ignore
-import React, {
+
+import {
   ChangeEvent,
   TextareaHTMLAttributes,
   forwardRef,
