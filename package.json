@@ -2,10 +2,6 @@
   "name": "@jecfe/react-design-system",
   "version": "1.0.34",
   "description": "React design system",
-  "files": [
-    "dist",
-    "package.json"
-  ],
   "exports": {
     ".": {
       "require": "./dist/index.js",
@@ -15,10 +11,11 @@
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts"
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "src/tailwind.css"
+    "src/tailwind.css",  
+    "package.json"
   ],
   "scripts": {
     "build": "tsup",
