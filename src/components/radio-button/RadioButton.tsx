@@ -35,8 +35,8 @@ const label = cva(["flex flex-col font-bold w-fit"], {
   variants: {
     size: {
       medium: "text-base",
-      small: "md:text-base text-sm",
-      large: "md:text-3xl text-xl",
+      small: "text-sm",
+      large: "text-xl",
     },
     darkMode: { true: "text-slate-300", false: "text-black" },
   },
