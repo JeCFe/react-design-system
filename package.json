@@ -1,9 +1,21 @@
 {
   "name": "@jecfe/react-design-system",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "React design system",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts"
   "files": [
     "dist",
     "src/tailwind.css"
