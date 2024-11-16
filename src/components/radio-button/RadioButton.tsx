@@ -4,9 +4,9 @@ import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
 const radio = cva(
   [
-    "appearance-none flex rounded-full border-2 border-black focus:outline-none",
-    "after:m-auto after:flex after:content-center after:justify-center after:rounded-full after:checked:bg-pink-400",
-    "focus:border-4 focus:ring focus:ring-pink-400",
+    "appearance-none flex rounded-full border-2 focus:outline-none",
+    "after:m-auto after:flex after:content-center after:justify-center after:rounded-full",
+    "focus:border-4 focus:ring-4 hover:ring-4",
     "disabled:bg-gray-300",
   ],
   {
@@ -14,36 +14,65 @@ const radio = cva(
       size: {
         small: ["h-8 min-h-8 w-8 min-w-8", "after:h-4 after:w-4"],
         medium: ["h-10 min-h-10 w-10 min-w-10", "after:h-6 after:w-6"],
+        large: ["h-12 min-h-12 w-12 min-w-12", "after:h-7 after:w-7"],
+      },
+      theme: {
+        standard:
+          "border-black after:checked:bg-pink-400 focus:ring-pink-400 hover:ring-pink-400",
+        dark: "border-slate-400 after:checked:bg-pink-600 focus:ring-pink-600 hover:ring-pink-600",
+        pink: "border-pink-500/80 after:checked:bg-cyan-500/80 focus:ring-cyan-500/80 hover:ring-cyan-500/80",
+        cyan: "border-cyan-500/80 after:checked:bg-pink-500/80 focus:ring-pink-500/80 hover:ring-pink-500/80",
       },
     },
     defaultVariants: {
-      size: "small",
+      size: "medium",
+      theme: "standard",
     },
   },
 );
 
-const label = cva(["flex flex-col"], {
-  variants: { size: { medium: "text-lg", small: "text-base" } },
-  defaultVariants: { size: "small" },
+const label = cva(["flex flex-col font-bold w-fit"], {
+  variants: {
+    size: {
+      medium: "text-base",
+      small: "md:text-base text-sm",
+      large: "md:text-3xl text-xl",
+    },
+    darkMode: { true: "text-slate-300", false: "text-black" },
+  },
+  defaultVariants: { size: "medium" },
 });
 
-const hints = cva("text-gray-500", {
-  variants: { size: { small: "ml-10", medium: "ml-12" } },
-});
-
-type Props = {
+export type RadioButtonProps = {
   children?: ReactNode;
-  hint?: ReactNode;
   className?: string;
+  darkMode?: boolean;
+  radioClassName?: string;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
-  VariantProps<typeof radio>;
+  VariantProps<typeof radio> &
+  VariantProps<typeof label>;
 
-export const RadioButton = forwardRef<HTMLInputElement, Props>(
-  ({ children, hint, size, className, ...rest }: Props, ref) => (
-    <label className={label({ size, className })}>
-      {hint && <span className={hints({ size })}>{hint}</span>}
+export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
+  (
+    {
+      children,
+      size,
+      className,
+      darkMode,
+      theme,
+      radioClassName,
+      ...rest
+    }: RadioButtonProps,
+    ref,
+  ) => (
+    <label className={label({ size, className, darkMode })}>
       <div className="flex flex-row items-center">
-        <input {...rest} className={radio({ size })} ref={ref} type="radio" />
+        <input
+          {...rest}
+          className={radio({ size, theme, className: radioClassName })}
+          ref={ref}
+          type="radio"
+        />
         <span className="ml-2">{children}</span>
       </div>
     </label>
@@ -51,7 +80,8 @@ export const RadioButton = forwardRef<HTMLInputElement, Props>(
 );
 
 RadioButton.defaultProps = {
-  hint: undefined,
+  darkMode: true,
+  theme: "standard",
   children: undefined,
   className: "",
 };
