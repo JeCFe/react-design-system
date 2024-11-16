@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 //@ts-ignore
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 const pill = cva("rounded-full text-center", {
   variants: {

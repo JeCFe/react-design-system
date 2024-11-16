@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+// @ts-ignore
+import React, { ReactNode } from "react";
 
 type Props = {
   title?: string;

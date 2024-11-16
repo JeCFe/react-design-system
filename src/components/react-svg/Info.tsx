@@ -1,5 +1,5 @@
 import type { SVGProps } from "react";
-
+// @ts-ignore
 import * as React from "react";
 const SvgInfo = (props: SVGProps<SVGSVGElement>) => (
   <svg

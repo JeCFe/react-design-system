@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
-
-import { ReactNode } from "react";
+// @ts-ignore
+import React, { ReactNode } from "react";
 
 const toggleVariants = cva(
   [

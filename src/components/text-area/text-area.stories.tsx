@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ComponentProps, useRef } from "react";
+import React, { ComponentProps, useRef } from "react";
 import { TextArea } from "./TextArea";
 
 const widths: ComponentProps<typeof TextArea>["width"][] = [

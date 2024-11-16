@@ -1,4 +1,5 @@
-import { AnchorHTMLAttributes, ReactNode } from "react";
+// @ts-ignore
+import React, { AnchorHTMLAttributes, ReactNode } from "react";
 
 type Props = {
   children: ReactNode | ReactNode[];

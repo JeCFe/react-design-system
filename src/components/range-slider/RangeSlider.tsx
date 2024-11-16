@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
-
-import { InputHTMLAttributes, ReactNode, forwardRef } from "react";
+// @ts-ignore
+import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
 const rangeSlider = cva(
   "appearance-none h-3 rounded-full bg-gray-300 accent-pink-500",

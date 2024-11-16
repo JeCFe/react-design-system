@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ComponentProps } from "react";
+import React, { ComponentProps } from "react";
 import { ToggleItem } from "./ToggleItem";
 const sizes: ComponentProps<typeof ToggleItem>["size"][] = [
   "small",

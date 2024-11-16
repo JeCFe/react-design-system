@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-
+// @ts-ignore
 import React from "react";
 import { SpinnerSvg } from "../react-svg";
 
