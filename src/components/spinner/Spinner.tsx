@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import React from "react";
 import { SpinnerSvg } from "../react-svg";
 
-const spinner = cva("", {
+export const spinner = cva("", {
   variants: {
     size: {
       large: "w-40 h-40",
