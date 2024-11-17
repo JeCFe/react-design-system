@@ -16,7 +16,6 @@ export * from "./react-svg";
 export { Spinner } from "./spinner";
 export { Table } from "./table";
 export { TextArea } from "./text-area";
-export { Timeline } from "./timeline";
 export { ToggleGroup } from "./toggle-group";
 export { ToggleItem } from "./toggle-item";
 export { Tooltip } from "./tooltip";
