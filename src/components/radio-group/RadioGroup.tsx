@@ -1,7 +1,8 @@
-import React, { ReactNode } from "react";
+import { VariantProps } from "class-variance-authority";
+import React from "react";
 import { FieldValues, Path, PathValue, UseFormRegister } from "react-hook-form";
 import { FieldError } from "../error-message";
-import { Legend } from "../legend";
+import { Legend, dark } from "../legend";
 import { LocalErrorWrapper } from "../local-error-wrapper";
 import { RadioButton, RadioButtonProps } from "../radio-button";
 
@@ -18,7 +19,8 @@ type Props<T extends FieldValues> = {
   hint?: string;
   errors?: FieldError[];
   required?: boolean;
-} & Pick<RadioButtonProps, "size">;
+} & Pick<RadioButtonProps, "size"> &
+  VariantProps<typeof dark>;
 
 export function RadioGroup<T extends FieldValues>({
   radioButtons,
@@ -29,11 +31,12 @@ export function RadioGroup<T extends FieldValues>({
   hint,
   register,
   errors,
+  mode,
   required = false,
 }: Props<T>) {
   return (
     <div>
-      <Legend legend={legend} hint={hint} />
+      <Legend legend={legend} hint={hint} mode={mode} />
       <LocalErrorWrapper errors={errors}>
         <div className="space-y-3">
           {radioButtons.map((option, index) => (

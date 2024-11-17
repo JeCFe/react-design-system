@@ -30,14 +30,15 @@ const checkbox = cva(
       },
       theme: {
         standard:
-          "border-slate-900 focus:before:border-slate-900 after:checked:border-pink-400 focus:before:ring-pink-400 hover:ring-pink-400",
-        dark: "border-slate-400 focus:before:border-slate-400 after:checked:border-pink-400 focus:before:ring-pink-400 hover:ring-pink-400",
-        pink: "border-pink-500 focus:before:border-pink-500 after:checked:border-cyan-500 focus:before:ring-cyan-500 hover:ring-pink-500",
-        cyan: "border-cyan-500 focus:before:border-cyan-500 after:checked:border-pink-500 focus:before:ring-pink-500 hover:ring-cyan-500",
+          "bg-white border-slate-900 focus:before:border-slate-900 after:checked:border-pink-400 focus:before:ring-yellow-400 hover:ring-pink-400",
+        dark: "border-slate-400 focus:before:border-slate-400 after:checked:border-pink-400 focus:before:ring-yellow-400 hover:ring-pink-400",
+        pink: "border-pink-500 focus:before:border-pink-500 after:checked:border-cyan-500 focus:before:ring-yellow-400 hover:ring-pink-500",
+        cyan: "border-cyan-500 focus:before:border-cyan-500 after:checked:border-pink-500 focus:before:ring-yellow-400 hover:ring-cyan-500",
       },
     },
     defaultVariants: {
       size: "small",
+      theme: "dark",
     },
   },
 );
@@ -50,7 +51,7 @@ const label = cva(["flex flex-col w-fit"], {
       dark: "text-slate-300",
     },
   },
-  defaultVariants: { size: "small" },
+  defaultVariants: { size: "small", darkMode: "dark" },
 });
 
 type Props = {

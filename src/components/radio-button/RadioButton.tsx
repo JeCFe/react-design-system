@@ -18,15 +18,15 @@ const radio = cva(
       },
       theme: {
         standard:
-          "border-black after:checked:bg-pink-400 focus:ring-pink-400 hover:ring-pink-400",
-        dark: "border-slate-400 after:checked:bg-pink-600 focus:ring-pink-600 hover:ring-pink-600",
-        pink: "border-pink-500/80 after:checked:bg-cyan-500/80 focus:ring-cyan-500/80 hover:ring-cyan-500/80",
-        cyan: "border-cyan-500/80 after:checked:bg-pink-500/80 focus:ring-pink-500/80 hover:ring-pink-500/80",
+          "border-black after:checked:bg-pink-400 focus:ring-yellow-400 hover:ring-pink-400",
+        dark: "border-slate-400 after:checked:bg-pink-600 focus:ring-yellow-400 hover:ring-pink-600",
+        pink: "border-pink-500/80 after:checked:bg-cyan-500/80 focus:ring-yellow-400 hover:ring-cyan-500/80",
+        cyan: "border-cyan-500/80 after:checked:bg-pink-500/80 focus:ring-yellow-400 hover:ring-pink-500/80",
       },
     },
     defaultVariants: {
       size: "medium",
-      theme: "standard",
+      theme: "dark",
     },
   },
 );
@@ -40,7 +40,7 @@ const label = cva(["flex flex-col font-bold w-fit"], {
     },
     darkMode: { true: "text-slate-300", false: "text-black" },
   },
-  defaultVariants: { size: "medium" },
+  defaultVariants: { size: "medium", darkMode: true },
 });
 
 export type RadioButtonProps = {
