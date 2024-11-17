@@ -1,0 +1,23 @@
+.table {
+  @apply w-full table-fixed rounded-lg bg-slate-700 py-2 text-left text-slate-200 last:table-auto;
+}
+
+.table thead {
+  @apply border-b border-slate-400 text-slate-200;
+}
+
+.table tbody tr {
+  @apply divide-x divide-slate-400 border-slate-400 [&:not(:last-child)]:border-b;
+}
+
+.table th {
+  @apply px-6 py-4 text-lg font-bold;
+}
+
+.table td {
+  @apply px-6 py-4 text-base font-normal;
+}
+
+.table thead tr {
+  @apply divide-x divide-slate-400;
+}

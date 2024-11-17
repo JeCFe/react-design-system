@@ -14,6 +14,7 @@ export { RadioButton } from "./radio-button";
 export { RadioGroup } from "./radio-group";
 export * from "./react-svg";
 export { Spinner } from "./spinner";
+export { Table } from "./table";
 export { TextArea } from "./text-area";
 export { Timeline } from "./timeline";
 export { ToggleGroup } from "./toggle-group";
