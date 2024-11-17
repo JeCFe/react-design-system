@@ -4,16 +4,22 @@
     "declaration": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
+    "lib": ["ESNext", "DOM"],
     "types": ["node"],
-    "module": "es2015",
-    "moduleResolution": "node",
-    "noImplicitAny": false,
+    "module": "ES2015",
+    "moduleResolution": "bundler",
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "outDir": "dist/esm",
     "sourceMap": true,
     "strict": true,
-    "target": "ES6"
+    "target": "ESNext"
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "ES2015",
+      "moduleResolution": "Node"
+    }
   },
   "include": [
     "src/**/*.ts",
