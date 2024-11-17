@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "rm -rf /dist && npm run build:esm",
-    "build:esm": "tsc && cp -r ./src/css ./dist/esm/css && cp -r tailwind.config.js ./dist/esm/tailwind.config.js && tailwindcss build -i src/tailwind.css -o dist/esm/tailwind.css",
+    "build:esm": "tsc && cp -r tailwind.config.js ./dist/esm/tailwind.config.js && tailwindcss build -i src/tailwind.css -o dist/esm/tailwind.css",
     "build:cjs": "tsc --module CommonJS --outDir dist/cjs && cp -r ./src/css ./dist/cjs/css && cp -r tailwind.config.js ./dist/cjs/tailwind.config.js && tailwindcss build -i src/tailwind.css -o dist/cjs/tailwind.css",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o docs-build",
