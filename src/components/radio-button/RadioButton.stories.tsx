@@ -18,25 +18,6 @@ export const Default: Story = {
   args: { children: "Radio Button" },
 };
 
-export const Hint: Story = {
-  render: () => {
-    return (
-      <div className="flex flex-row space-x-8">
-        {sizes.map((size) => (
-          <div className="flex flex-col">
-            <h1 className="pb-4 text-xl font-bold">{size}</h1>
-            <div className="flex flex-col space-y-4">
-              <RadioButton size={size} hint={`${size} with a hint`}>
-                {size} radio button
-              </RadioButton>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  },
-};
-
 export const Variants: Story = {
   render: () => {
     return (

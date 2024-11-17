@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 const toggleVariants = cva(
   [
     "inline-flex items-center justify-center rounded-md transition-colors",
-    "hover:bg-pink-400 hover:text-muted-foreground",
+    "hover:bg-pink-400 hover:text-muted-foreground focus:ring-2 focus:ring-yellow-400",
   ],
   {
     variants: {

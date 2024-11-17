@@ -11,11 +11,15 @@ import React, {
 
 const textArea = cva(
   [
-    "appearance-none focus:outline-none resize-none min-w-40",
-    "disabled:bg-gray-300",
+    "appearance-none focus:outline-none resize-none min-w-40 rounded",
+    "disabled:bg-gray-300 focus:ring-2",
   ],
   {
     variants: {
+      darkMode: {
+        true: "border-transparent",
+        false: "border-black",
+      },
       width: {
         medium: "w-96",
         large: "w-[500px]",
@@ -28,14 +32,15 @@ const textArea = cva(
         full: "h-full",
       },
       border: {
-        bottom: "px-2 pb-1 border-b border-black",
-        full: "rounded-md p-3 pb-4 border-2 border-black focus:outline-none focus:ring-2 focus:ring-pink-400",
+        bottom: "px-2 pb-1 border-b hover:border-b-2  hover:border-pink-400",
+        full: "hover:border-2 p-3 pb-4 border focus:outline-none  focus:ring-yellow-400 hover:border-pink-400",
       },
     },
     defaultVariants: {
       width: "full",
       height: "medium",
       border: "full",
+      darkMode: false,
     },
   },
 );
