@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react";
 import { FieldValues, Path, PathValue, UseFormRegister } from "react-hook-form";
+import { FieldError } from "../error-message";
+import { Legend } from "../legend";
+import { LocalErrorWrapper } from "../local-error-wrapper";
 import { RadioButton, RadioButtonProps } from "../radio-button";
-
-type FieldError = { message: string };
 
 type RadioOptions<T extends FieldValues> = {
   value: PathValue<T, Path<T>>;
@@ -13,8 +14,8 @@ type Props<T extends FieldValues> = {
   defaultValue?: PathValue<T, Path<T>>;
   name: Path<T>;
   register: UseFormRegister<T>;
-  legend?: string | ReactNode;
-  hint?: string | ReactNode;
+  legend?: string;
+  hint?: string;
   errors?: FieldError[];
   required?: boolean;
 } & Pick<RadioButtonProps, "size">;
@@ -32,23 +33,8 @@ export function RadioGroup<T extends FieldValues>({
 }: Props<T>) {
   return (
     <div>
-      {legend && (
-        <legend className="text-2xl font-bold tracking-tight text-slate-200">
-          {legend}
-        </legend>
-      )}
-      {hint && (
-        <div className="text-xl tracking-tight text-slate-300">{hint}</div>
-      )}
-      {(hint || legend) && <div className="my-4" />}
-      <div
-        className={errors ? "border-l-2 border-red-600 py-1 pl-4" : undefined}
-      >
-        {errors && (
-          <div className="mb-2 flex flex-row text-lg font-bold text-red-600">
-            {errors.map((error) => error.message)}
-          </div>
-        )}
+      <Legend legend={legend} hint={hint} />
+      <LocalErrorWrapper errors={errors}>
         <div className="space-y-3">
           {radioButtons.map((option, index) => (
             <RadioButton
@@ -66,7 +52,7 @@ export function RadioGroup<T extends FieldValues>({
             />
           ))}
         </div>
-      </div>
+      </LocalErrorWrapper>
     </div>
   );
 }
