@@ -1,4 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
+// @ts-ignore
 import React from "react";
 
 export const dark = cva([], {

@@ -1,4 +1,5 @@
 import { cva } from "class-variance-authority";
+// @ts-ignore
 import React, { HTMLAttributes, ReactNode } from "react";
 import styles from "./table.module.css";
 

@@ -1,4 +1,5 @@
 import { cva, VariantProps } from "class-variance-authority";
+// @ts-ignore
 import React, { forwardRef, InputHTMLAttributes } from "react";
 import { FieldError } from "../error-message";
 import { dark, Legend } from "../legend";

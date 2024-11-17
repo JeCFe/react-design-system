@@ -1,4 +1,5 @@
 import { VariantProps } from "class-variance-authority";
+// @ts-ignore
 import React from "react";
 import { FieldValues, Path, PathValue, UseFormRegister } from "react-hook-form";
 import { FieldError } from "../error-message";

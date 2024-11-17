@@ -1,3 +1,4 @@
+// @ts-ignore
 import React from "react";
 
 export type FieldError = { message: string };
