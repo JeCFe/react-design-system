@@ -70,7 +70,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
           {...rest}
           className={checkboxCva({ size, theme })}
           ref={ref}
-          type="checkboxCva"
+          type="checkbox"
         />
         <span className="ml-4">{children}</span>
       </div>

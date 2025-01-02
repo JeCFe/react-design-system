@@ -71,7 +71,7 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
           {...rest}
           className={radioCva({ size, theme, className: radioClassName })}
           ref={ref}
-          type="radioCva"
+          type="radio"
         />
         <span className="ml-2">{children}</span>
       </div>
