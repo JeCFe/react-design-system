@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import React, { ReactNode, useState } from "react";
 import { Info } from "../react-svg";
 
-const tooltip = cva("", {
+const tooltipCva = cva("", {
   variants: {
     type: {
       info: "fill-blue-500 hover:fill-blue-700",
@@ -24,7 +24,7 @@ const tooltip = cva("", {
 
 type Props = {
   children: ReactNode | ReactNode[];
-} & VariantProps<typeof tooltip>;
+} & VariantProps<typeof tooltipCva>;
 
 export function Tooltip({ children, type, size }: Props) {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,7 +35,7 @@ export function Tooltip({ children, type, size }: Props) {
       onMouseLeave={() => setIsVisible(!isVisible)}
     >
       <span onMouseEnter={() => setIsVisible(!isVisible)}>
-        <Info className={tooltip({ type, size })} />
+        <Info className={tooltipCva({ type, size })} />
       </span>
       {isVisible && (
         <div className="absolute z-10 h-min w-max max-w-48 rounded-md bg-white p-2 text-base shadow-lg">

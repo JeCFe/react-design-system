@@ -2,7 +2,7 @@ import { VariantProps, cva } from "class-variance-authority";
 // @ts-ignore
 import React, { ReactNode } from "react";
 
-const toggleVariants = cva(
+const toggleCva = cva(
   [
     "inline-flex items-center justify-center rounded-md transition-colors",
     "hover:bg-pink-400 hover:text-muted-foreground focus:ring-2 focus:ring-yellow-400",
@@ -30,7 +30,7 @@ type Props = {
   onClick?: () => void;
   children?: ReactNode | ReactNode[];
   className?: string;
-} & VariantProps<typeof toggleVariants>;
+} & VariantProps<typeof toggleCva>;
 
 export function ToggleItem({
   active,
@@ -41,7 +41,7 @@ export function ToggleItem({
 }: Props) {
   return (
     <button
-      className={toggleVariants({ active, size, className })}
+      className={toggleCva({ active, size, className })}
       onClick={onClick}
     >
       {children}

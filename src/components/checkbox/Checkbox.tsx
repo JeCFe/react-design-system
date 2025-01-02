@@ -2,7 +2,7 @@ import { VariantProps, cva } from "class-variance-authority";
 // @ts-ignore
 import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
-const checkbox = cva(
+export const checkboxCva = cva(
   [
     "appearance-none box-border relative border-2",
     "focus:before:absolute focus:before:-left-0.5 focus:before:-top-0.5 focus:before:border-4 focus:before:ring",
@@ -59,7 +59,7 @@ type Props = {
   hint?: ReactNode;
   className?: string;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
-  VariantProps<typeof checkbox> &
+  VariantProps<typeof checkboxCva> &
   VariantProps<typeof label>;
 
 export const Checkbox = forwardRef<HTMLInputElement, Props>(
@@ -68,9 +68,9 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
       <div className="flex w-fit flex-row items-center">
         <input
           {...rest}
-          className={checkbox({ size, theme })}
+          className={checkboxCva({ size, theme })}
           ref={ref}
-          type="checkbox"
+          type="checkboxCva"
         />
         <span className="ml-4">{children}</span>
       </div>

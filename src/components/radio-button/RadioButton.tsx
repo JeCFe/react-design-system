@@ -2,7 +2,7 @@ import { VariantProps, cva } from "class-variance-authority";
 // @ts-ignore
 import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
-const radio = cva(
+const radioCva = cva(
   [
     "appearance-none flex rounded-full border-2 focus:outline-none",
     "after:m-auto after:flex after:content-center after:justify-center after:rounded-full",
@@ -49,7 +49,7 @@ export type RadioButtonProps = {
   darkMode?: boolean;
   radioClassName?: string;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, "size"> &
-  VariantProps<typeof radio> &
+  VariantProps<typeof radioCva> &
   VariantProps<typeof label>;
 
 export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
@@ -69,9 +69,9 @@ export const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
       <div className="flex flex-row items-center">
         <input
           {...rest}
-          className={radio({ size, theme, className: radioClassName })}
+          className={radioCva({ size, theme, className: radioClassName })}
           ref={ref}
-          type="radio"
+          type="radioCva"
         />
         <span className="ml-2">{children}</span>
       </div>

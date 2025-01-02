@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import React from "react";
 import { SpinnerSvg } from "../react-svg";
 
-export const spinner = cva("", {
+export const spinnerCva = cva("", {
   variants: {
     size: {
       large: "w-40 h-40",
@@ -25,8 +25,8 @@ export const spinner = cva("", {
 type Props = {
   fast?: boolean;
   className?: string;
-} & VariantProps<typeof spinner>;
+} & VariantProps<typeof spinnerCva>;
 
 export function Spinner({ fast, className, size }: Props) {
-  return <SpinnerSvg className={spinner({ fast, size, className })} />;
+  return <SpinnerSvg className={spinnerCva({ fast, size, className })} />;
 }

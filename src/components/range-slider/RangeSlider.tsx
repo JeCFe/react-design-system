@@ -2,7 +2,7 @@ import { VariantProps, cva } from "class-variance-authority";
 // @ts-ignore
 import React, { InputHTMLAttributes, ReactNode, forwardRef } from "react";
 
-const rangeSlider = cva(
+const rangeSliderCva = cva(
   "appearance-none h-3 rounded-full bg-gray-300 accent-pink-500",
   {
     variants: {
@@ -22,7 +22,7 @@ const rangeSlider = cva(
 type Props = {
   label?: ReactNode | ReactNode[];
 } & Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> &
-  VariantProps<typeof rangeSlider>;
+  VariantProps<typeof rangeSliderCva>;
 
 export const RangeSlider = forwardRef<HTMLInputElement, Props>(
   ({ className, size, label = undefined, ...rest }, ref) => {
@@ -35,7 +35,7 @@ export const RangeSlider = forwardRef<HTMLInputElement, Props>(
           ref={ref}
           type="range"
           aria-label="Slider"
-          className={rangeSlider({ className, size })}
+          className={rangeSliderCva({ className, size })}
           {...rest}
         />
       </div>

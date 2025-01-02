@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 // @ts-ignore
 import React, { HtmlHTMLAttributes, ReactNode, useState } from "react";
 
-const accordion = cva(
+export const accordionCva = cva(
   "transition-max-height overflow-hidden duration-300 ease-in-out",
   {
     variants: {
@@ -37,7 +37,7 @@ export function Accordion({ openTitle, closeTitle, children, ...rest }: Props) {
       >
         {!isOpen ? openTitle : closeTitle}
       </div>
-      <div className={accordion({ open: isOpen })}>
+      <div className={accordionCva({ open: isOpen })}>
         <div>{children}</div>
       </div>
     </div>

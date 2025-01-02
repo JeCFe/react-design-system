@@ -5,7 +5,7 @@ import { FieldError } from "../error-message";
 import { dark, Legend } from "../legend";
 import { LocalErrorWrapper } from "../local-error-wrapper";
 
-const input = cva(
+export const inputCva = cva(
   [
     "flex w-full space-y-2 border-2 rounded p-2.5 md:max-w-xl appearance-none focus:outline-none",
     "hover:border-pink-400 focus:ring-yellow-400 focus:ring-2 text-slate-900",
@@ -28,7 +28,7 @@ type Props = {
   hint?: string;
   errors?: FieldError[];
 } & InputHTMLAttributes<HTMLInputElement> &
-  VariantProps<typeof input> &
+  VariantProps<typeof inputCva> &
   VariantProps<typeof dark>;
 
 export const Input = forwardRef<HTMLInputElement, Props>(
@@ -40,7 +40,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
           <input
             ref={ref}
             type="text"
-            className={input({ mode })}
+            className={inputCva({ mode })}
             {...rest}
             aria-label={legend}
           />

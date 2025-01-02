@@ -1,9 +1,9 @@
 import { VariantProps, cva } from "class-variance-authority";
 // @ts-ignore
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
-import { Spinner, spinner } from "../spinner";
+import { Spinner, spinnerCva } from "../spinner";
 
-const button = cva(
+export const buttonCva = cva(
   [
     "flex border-[3px] tracking-normal rounded items-center justify-center focus:outline-none font-bold",
     "disabled:bg-gray-400 disabled:border-gray-400 disabled:text-slate-700",
@@ -44,10 +44,10 @@ type Props = {
   children: ReactNode | ReactNode[];
   isLoading?: boolean;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "size"> &
-  VariantProps<typeof button>;
+  VariantProps<typeof buttonCva>;
 
-type ButtonSize = NonNullable<VariantProps<typeof button>["size"]>;
-type SpinnerSize = NonNullable<VariantProps<typeof spinner>["size"]>;
+type ButtonSize = NonNullable<VariantProps<typeof buttonCva>["size"]>;
+type SpinnerSize = NonNullable<VariantProps<typeof spinnerCva>["size"]>;
 type SizeMap = Record<ButtonSize, SpinnerSize>;
 export function Button({
   size,
@@ -75,7 +75,7 @@ export function Button({
       )}
       <button
         {...rest}
-        className={button({ size, variant, className })}
+        className={buttonCva({ size, variant, className })}
         disabled={isLoading || disabled}
       >
         {children}
